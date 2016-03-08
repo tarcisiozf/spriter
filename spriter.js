@@ -81,13 +81,12 @@ class Spriter {
 		this.endX = (event.pageX || event.touches[0].pageX) - this.canvasPosition.left;
 		this.endY = (event.pageY || event.touches[0].pageY) - this.canvasPosition.top;
 
+		requestAnimationFrame(this.update);
 	}
 
 	onEnd () {
 
 		this.trackingTouch = false;
-
-		requestAnimationFrame(this.update);
 	}
 
 	update () {
